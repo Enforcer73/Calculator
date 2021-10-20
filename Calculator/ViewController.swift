@@ -89,7 +89,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func plusMinusKey(_ sender: UIButton) {
-//        currentInput = -currentInput
         if displayLable.text == "0" {
             currentInput = +currentInput
         } else {
