@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,446 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQQ-WS-Og5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="336"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B5W-Y4-KMA">
+                                        <rect key="frame" x="8" y="216" width="398" height="112"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="115"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="B5W-Y4-KMA" secondAttribute="trailing" id="9Tk-uw-8dk"/>
+                                    <constraint firstItem="B5W-Y4-KMA" firstAttribute="leading" secondItem="VQQ-WS-Og5" secondAttribute="leadingMargin" id="HJm-e8-TUR"/>
+                                    <constraint firstItem="B5W-Y4-KMA" firstAttribute="height" secondItem="VQQ-WS-Og5" secondAttribute="height" multiplier="1:3" id="TxY-HI-0iU"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="B5W-Y4-KMA" secondAttribute="bottom" id="wUw-Ss-kFM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAt-Ts-Xva">
+                                <rect key="frame" x="0.0" y="380" width="414" height="482"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="QBM-j9-WJQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="482"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fIP-i7-rIu">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="87.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eh-5z-CiJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="AC"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LOv-3m-5QZ"/>
+                                                            <action selector="resetKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jev-91-IDj"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYz-74-UxF">
+                                                        <rect key="frame" x="109" y="0.0" width="88" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="+/−"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jZX-KJ-gBt"/>
+                                                            <action selector="plusMinusKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Klq-NC-UoP"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r6-R3-1mf">
+                                                        <rect key="frame" x="217" y="0.0" width="89" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="﹪"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="twe-8X-H3G"/>
+                                                            <action selector="percentKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RTa-gA-B75"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qap-W8-KL7">
+                                                        <rect key="frame" x="326" y="0.0" width="88" height="87.5"/>
+                                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="÷"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BQb-b9-5Yl"/>
+                                                            <action selector="equalityKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sSG-1r-NF6"/>
+                                                            <action selector="operationsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s0f-nH-rnq"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="9r6-R3-1mf" firstAttribute="width" secondItem="Qap-W8-KL7" secondAttribute="width" multiplier="1.00625" id="L2s-XT-PvG"/>
+                                                    <constraint firstItem="4eh-5z-CiJ" firstAttribute="width" secondItem="YYz-74-UxF" secondAttribute="width" multiplier="1.00625" id="ifb-DQ-htp"/>
+                                                    <constraint firstItem="YYz-74-UxF" firstAttribute="width" secondItem="9r6-R3-1mf" secondAttribute="width" multiplier="0.993789" id="uk4-4t-3iN"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RDe-ZI-VTS">
+                                                <rect key="frame" x="0.0" y="98.5" width="414" height="87.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdn-RM-c0h">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="7"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C4t-13-Ffj"/>
+                                                            <action selector="digitsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ARh-5e-erY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLN-nS-kN2">
+                                                        <rect key="frame" x="109" y="0.0" width="88" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="8"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ykU-7V-YTR"/>
+                                                            <action selector="digitsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k2H-qI-ROh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpM-PE-81E">
+                                                        <rect key="frame" x="217" y="0.0" width="89" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="9"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ii0-kY-Q58"/>
+                                                            <action selector="digitsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="82z-ym-ThA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60d-X1-ajA">
+                                                        <rect key="frame" x="326" y="0.0" width="88" height="87.5"/>
+                                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="×"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uA6-zo-KZW"/>
+                                                            <action selector="equalityKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sUv-cf-sH3"/>
+                                                            <action selector="operationsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MT2-hr-UCI"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="wpM-PE-81E" firstAttribute="width" secondItem="60d-X1-ajA" secondAttribute="width" multiplier="1.00625" id="EGG-eQ-PtK"/>
+                                                    <constraint firstItem="Xdn-RM-c0h" firstAttribute="width" secondItem="mLN-nS-kN2" secondAttribute="width" multiplier="1.00625" id="RwD-3f-JW3"/>
+                                                    <constraint firstItem="mLN-nS-kN2" firstAttribute="width" secondItem="wpM-PE-81E" secondAttribute="width" multiplier="0.993789" id="bxf-iY-CR9"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RCL-6D-SWj">
+                                                <rect key="frame" x="0.0" y="197" width="414" height="88"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gp2-G7-s93">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="88"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="4"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9k7-B2-AL0"/>
+                                                            <action selector="digitsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8TK-qA-5MB"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUH-hQ-Dpv">
+                                                        <rect key="frame" x="109" y="0.0" width="88" height="88"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Kt-xs-26p"/>
+                                                            <action selector="digitsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJf-Cx-RCS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKj-d9-auf">
+                                                        <rect key="frame" x="217" y="0.0" width="89" height="88"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="6"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2a-dk-opM"/>
+                                                            <action selector="digitsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eYg-PB-rCP"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebJ-dm-cYi">
+                                                        <rect key="frame" x="326" y="0.0" width="88" height="88"/>
+                                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="−"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZzN-en-4fv"/>
+                                                            <action selector="equalityKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X7W-Vf-G6V"/>
+                                                            <action selector="operationsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WXv-Cw-l12"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="gp2-G7-s93" firstAttribute="width" secondItem="IUH-hQ-Dpv" secondAttribute="width" multiplier="1.00625" id="IoT-PK-BQk"/>
+                                                    <constraint firstItem="UKj-d9-auf" firstAttribute="width" secondItem="ebJ-dm-cYi" secondAttribute="width" multiplier="1.00625" id="Syr-mO-3Bb"/>
+                                                    <constraint firstItem="IUH-hQ-Dpv" firstAttribute="width" secondItem="UKj-d9-auf" secondAttribute="width" multiplier="0.993789" id="xwM-o2-iI0"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Jb-m5-j0L">
+                                                <rect key="frame" x="0.0" y="296" width="414" height="87.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9s-M1-d3O">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="1"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v1N-gh-FEP"/>
+                                                            <action selector="digitsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BZe-dN-Txy"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nS-Zi-ZGi">
+                                                        <rect key="frame" x="109" y="0.0" width="88" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="2"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5nf-WH-Zpd"/>
+                                                            <action selector="digitsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uAA-Jz-eBs"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bt-w7-oAv">
+                                                        <rect key="frame" x="217" y="0.0" width="89" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="3"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hkK-2w-9Fm"/>
+                                                            <action selector="digitsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6xH-57-Vbe"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-Xw-d4E">
+                                                        <rect key="frame" x="326" y="0.0" width="88" height="87.5"/>
+                                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="+"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b5v-kM-89X"/>
+                                                            <action selector="equalityKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MFf-y6-7WF"/>
+                                                            <action selector="operationsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pl5-CL-cyH"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="7bt-w7-oAv" firstAttribute="width" secondItem="ZPd-Xw-d4E" secondAttribute="width" multiplier="1.00625" id="2bO-HY-HEH"/>
+                                                    <constraint firstItem="3nS-Zi-ZGi" firstAttribute="width" secondItem="7bt-w7-oAv" secondAttribute="width" multiplier="0.993789" id="NI0-Al-eof"/>
+                                                    <constraint firstItem="k9s-M1-d3O" firstAttribute="width" secondItem="3nS-Zi-ZGi" secondAttribute="width" multiplier="1.00625" id="joC-1N-Xr8"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-9Z-idc">
+                                                <rect key="frame" x="0.0" y="394.5" width="414" height="87.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Etb-t4-PaF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="197.5" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="0"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MBh-fu-ieV"/>
+                                                            <action selector="digitsKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GBm-o6-NtB"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92f-0w-lls">
+                                                        <rect key="frame" x="217.5" y="0.0" width="88.5" height="87.5"/>
+                                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title=","/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRq-gQ-N6v"/>
+                                                            <action selector="dotKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="del-yt-liA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5H8-Ei-LaX">
+                                                        <rect key="frame" x="326" y="0.0" width="88" height="87.5"/>
+                                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="="/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="39"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfL-bW-wzw"/>
+                                                            <action selector="equalityKey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aHh-LZ-auc"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="92f-0w-lls" firstAttribute="width" secondItem="5H8-Ei-LaX" secondAttribute="width" multiplier="1.00365" id="MQe-13-9fW"/>
+                                                    <constraint firstItem="Etb-t4-PaF" firstAttribute="width" secondItem="Oca-9Z-idc" secondAttribute="width" multiplier="1:2" constant="-9.5" id="NYm-XU-DyI"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fIP-i7-rIu" firstAttribute="leading" secondItem="QBM-j9-WJQ" secondAttribute="leading" id="09N-Iy-q6f"/>
+                                            <constraint firstItem="RCL-6D-SWj" firstAttribute="leading" secondItem="QBM-j9-WJQ" secondAttribute="leading" id="8tN-2m-6gJ"/>
+                                            <constraint firstItem="fIP-i7-rIu" firstAttribute="top" secondItem="QBM-j9-WJQ" secondAttribute="top" id="99E-aT-IRm"/>
+                                            <constraint firstAttribute="trailing" secondItem="RCL-6D-SWj" secondAttribute="trailing" id="FhC-H3-QW2"/>
+                                            <constraint firstItem="Oca-9Z-idc" firstAttribute="leading" secondItem="QBM-j9-WJQ" secondAttribute="leading" id="WeN-nN-7em"/>
+                                            <constraint firstItem="RDe-ZI-VTS" firstAttribute="leading" secondItem="QBM-j9-WJQ" secondAttribute="leading" id="bor-jH-wgg"/>
+                                            <constraint firstItem="fIP-i7-rIu" firstAttribute="height" secondItem="RDe-ZI-VTS" secondAttribute="height" id="edd-I7-NoW"/>
+                                            <constraint firstItem="RCL-6D-SWj" firstAttribute="height" secondItem="9Jb-m5-j0L" secondAttribute="height" id="g6O-mj-XmL"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Jb-m5-j0L" secondAttribute="trailing" id="h4q-t5-Scl"/>
+                                            <constraint firstAttribute="bottom" secondItem="Oca-9Z-idc" secondAttribute="bottom" id="ni5-Yk-cIZ"/>
+                                            <constraint firstItem="RDe-ZI-VTS" firstAttribute="height" secondItem="RCL-6D-SWj" secondAttribute="height" id="tdQ-bM-su8"/>
+                                            <constraint firstAttribute="trailing" secondItem="fIP-i7-rIu" secondAttribute="trailing" id="uOj-q6-YS1"/>
+                                            <constraint firstItem="9Jb-m5-j0L" firstAttribute="leading" secondItem="QBM-j9-WJQ" secondAttribute="leading" id="v8j-Fg-CBw"/>
+                                            <constraint firstItem="9Jb-m5-j0L" firstAttribute="height" secondItem="Oca-9Z-idc" secondAttribute="height" id="vby-yz-qhp"/>
+                                            <constraint firstAttribute="trailing" secondItem="RDe-ZI-VTS" secondAttribute="trailing" id="xPG-qh-5GF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Oca-9Z-idc" secondAttribute="trailing" id="ywQ-Uu-oE7"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="QBM-j9-WJQ" firstAttribute="top" secondItem="SAt-Ts-Xva" secondAttribute="top" id="4ya-qD-7Z7"/>
+                                    <constraint firstAttribute="trailing" secondItem="QBM-j9-WJQ" secondAttribute="trailing" id="6Js-po-fmw"/>
+                                    <constraint firstAttribute="bottom" secondItem="QBM-j9-WJQ" secondAttribute="bottom" id="pfS-bE-Bhq"/>
+                                    <constraint firstItem="QBM-j9-WJQ" firstAttribute="leading" secondItem="SAt-Ts-Xva" secondAttribute="leading" id="zJ7-sn-GE9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VQQ-WS-Og5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3me-JJ-6AH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SAt-Ts-Xva" secondAttribute="bottom" id="ACH-8E-KPV"/>
+                            <constraint firstItem="SAt-Ts-Xva" firstAttribute="top" secondItem="VQQ-WS-Og5" secondAttribute="bottom" id="AMV-gW-7Sk"/>
+                            <constraint firstItem="VQQ-WS-Og5" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="3:8" id="Syy-OG-Ohv"/>
+                            <constraint firstItem="SAt-Ts-Xva" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iH7-zO-Ld8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VQQ-WS-Og5" secondAttribute="trailing" id="mMO-h2-Z7j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SAt-Ts-Xva" secondAttribute="trailing" id="nHh-hC-7vY"/>
+                            <constraint firstItem="VQQ-WS-Og5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tmW-Fk-D3h"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="displayLable" destination="B5W-Y4-KMA" id="ZBQ-rv-ZBT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138" y="-114"/>
         </scene>
     </scenes>
 </document>
