@@ -112,15 +112,7 @@ class ViewController: UIViewController {
             displayLable.text = "0."
         }
     }
-    
-    
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.prepare()
-        generator.impactOccurred()
-    }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -129,7 +121,12 @@ class ViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.prepare()
+        generator.impactOccurred()
+    }
 
 }
 
